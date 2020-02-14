@@ -112,9 +112,10 @@ class App extends React.Component {
   };
 
   onButtonSubmit = () => {
+    console.log(this.state.input);
     this.setState({ imageUrl: this.state.input });
     fetch(`${process.env.REACT_APP_API_ENDPOINT}/image`, {
-      method: "put",
+      method: "post",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
         input: this.state.input
