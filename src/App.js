@@ -113,7 +113,7 @@ class App extends React.Component {
 
   onButtonSubmit = () => {
     this.setState({ imageUrl: this.state.input });
-    fetch(`${process.env.API_URL}/image`, {
+    fetch(`${process.env.REACT_APP_API_ENDPOINT}/image`, {
       method: "put",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
@@ -123,7 +123,7 @@ class App extends React.Component {
       .then(response => response.json())
       .then(response => {
         if (response) {
-          fetch(`${process.env.API_URL}/image`, {
+          fetch(`${process.env.REACT_APP_API_ENDPOINT}/image`, {
             method: "put",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({

@@ -19,7 +19,7 @@ class Signin extends React.Component {
   };
 
   onSubmitSignIn = () => {
-    fetch(`${process.env.API_URL}/signin`, {
+    fetch(`${process.env.REACT_APP_API_ENDPOINT}/signin`, {
       method: "post",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
